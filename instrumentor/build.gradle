@@ -1,29 +1,35 @@
-apply plugin: 'java'
-
-def version = '0.1'
-jar.archiveName = 'kelinci.jar'
+plugins {
+    id 'java'
+    id 'java-library'
+}
 
 repositories {
     mavenCentral()
 }
 
+def version = '0.1'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile 'args4j:args4j:2.32'    
-    compile group: 'org.ow2.asm', name: 'asm', version: '5.2'
-    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+    implementation 'args4j:args4j:2.32'
+    implementation group: 'org.ow2.asm', name: 'asm', version: '5.2'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.4'
 }
 
 jar {
+    archiveBaseName = 'kelinci'
+    archiveVersion = version
 
     manifest {
-        attributes 'Main-Class': "edu.cmu.sv.kelinci.instrumentor.Instrumentor",
-                   'Class-Path': '.',
-                   'Implementation-Title': 'Kelinci',
-                   'Implementation-Version': "$version"
+        attributes(
+            'Main-Class': "edu.cmu.sv.kelinci.instrumentor.Instrumentor",
+            'Class-Path': '.',
+            'Implementation-Title': 'Kelinci',
+            'Implementation-Version': version
+        )
     }
 
-    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 }
