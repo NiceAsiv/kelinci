@@ -1,5 +1,5 @@
 # README #
-[中文]()
+[简体中文](https://github.com/NiceAsiv/kelinci/blob/master/README_ZH.md)
 
 Interface to run AFL on Java programs.
 
