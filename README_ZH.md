@@ -1,5 +1,5 @@
 # README #
-
+[English](https://github.com/NiceAsiv/kelinci)
 用于在Java程序上运行AFL的界面。
 
 Kelinci在印度尼西亚语（Java岛上的语言）中意为兔子。
