@@ -2,7 +2,7 @@
 [English](https://github.com/NiceAsiv/kelinci)
 用于在Java程序上运行AFL的界面。
 
-Kelinci在印度尼西亚语（Java岛上的语言）中意为兔子。
+Kelinci在印度尼西亚语（爪哇岛上的语言）中意为兔子。
 
 此README假设您已经安装了AFL。有关如何安装和使用AFL的信息，请参见 <http://lcamtuf.coredump.cx/afl/>。Kelinci已成功测试了AFL版本2.44及更新版本。README解释了如何使用该工具。有关技术背景，请参阅'docs'目录中的CCS'17论文。
 
